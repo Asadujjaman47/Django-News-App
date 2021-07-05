@@ -1,7 +1,7 @@
 # Django-News-App
 
 #1. Create project and app
-django-admin startproject newsproject .
+django-admin startproject newsproject .<br>
 django-admin startapp newsapp
 
 #2.install newsapi
