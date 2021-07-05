@@ -4,25 +4,25 @@
 django-admin startproject newsproject .<br>
 django-admin startapp newsapp
 
-#2.install newsapi
+#2.install newsapi<br>
 pip install newsapi-python
 
-#3.add app in settings
-INSTALLED_APPS = [
+#3.add app in settings<br>
+INSTALLED_APPS = [<br>
     'newsapp',	#<-----------------
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles',<br>
 ]
 
 
-#4. join template
-import os
+#4. join template<br>
+import os<br>
 
-TEMPLATES = [
+TEMPLATES = [<br>
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, "templates")],		#<--------------
@@ -35,7 +35,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
-    },
+    },<br>
 ]
 
 
@@ -43,11 +43,11 @@ TEMPLATES = [
 #5.newsapp/views.py
 
 # importing api
-from django.shortcuts import render
+from django.shortcuts import render<br>
 from newsapi import NewsApiClient
 
 # Create your views here.
-def index(request):
+def index(request):<br>
 	
 	newsapi = NewsApiClient(api_key ='426c4bdc8ea540e0b2e73967c105f457')	#<-----(Create your API key)
 	top = newsapi.get_top_headlines(sources ='techcrunch')
@@ -108,18 +108,18 @@ Get The latest news on our website
 
 #7. newsproject/urls.py
 
-from django.contrib import admin
-from django.urls import path
-from newsapp import views
+from django.contrib import admin<br>
+from django.urls import path<br>
+from newsapp import views<br>
 
-urlpatterns = [
+urlpatterns = [<br>
 path('', views.index, name ='index'),
-	path('admin/', admin.site.urls),
+	path('admin/', admin.site.urls),<br>
 ]
 
 
-#8.Run the project
-Python manage.py runserver
+#8.Run the project<br>
+Python manage.py runserver<br>
 
 and go http://127.0.0.1:8000/
 
