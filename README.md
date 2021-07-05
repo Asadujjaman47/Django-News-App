@@ -9,12 +9,12 @@ pip install newsapi-python
 
 #3.add app in settings<br>
 INSTALLED_APPS = [<br>
-    'newsapp',	#<-----------------
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
+    'newsapp',	#<-----------------<br>
+    'django.contrib.admin',<br>
+    'django.contrib.auth',<br>
+    'django.contrib.contenttypes',<br>
+    'django.contrib.sessions',<br>
+    'django.contrib.messages',<br>
     'django.contrib.staticfiles',<br>
 ]
 
@@ -24,15 +24,15 @@ import os<br>
 
 TEMPLATES = [<br>
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "templates")],		#<--------------
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',<br>
+        'DIRS': [os.path.join(BASE_DIR, "templates")],		#<--------------<br>
+        'APP_DIRS': True,<br>
+        'OPTIONS': {<br>
+            'context_processors': [<br>
+                'django.template.context_processors.debug',<br>
+                'django.template.context_processors.request',<br>
+                'django.contrib.auth.context_processors.auth',<br>
+                'django.contrib.messages.context_processors.messages',<br>
             ],
         },
     },<br>
@@ -49,7 +49,7 @@ from newsapi import NewsApiClient
 # Create your views here.
 def index(request):<br>
 	
-	newsapi = NewsApiClient(api_key ='426c4bdc8ea540e0b2e73967c105f457')	#<-----(Create your API key)
+	newsapi = NewsApiClient(api_key ='426c4bdc8ea540e0b2e73967c105f457')	#<-----(Create your API key)<br>
 	top = newsapi.get_top_headlines(sources ='techcrunch')
 
 	l = top['articles']
@@ -113,7 +113,7 @@ from django.urls import path<br>
 from newsapp import views<br>
 
 urlpatterns = [<br>
-path('', views.index, name ='index'),
+path('', views.index, name ='index'),<br>
 	path('admin/', admin.site.urls),<br>
 ]
 
