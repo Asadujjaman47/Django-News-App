@@ -1,4 +1,5 @@
 # Django-News-App
+![](media/images/1.png)
 
 #1. Create project and app
 django-admin startproject newsproject .<br>
