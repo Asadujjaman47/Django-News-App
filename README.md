@@ -124,7 +124,7 @@ Python manage.py runserver<br>
 
 and go http://127.0.0.1:8000/
 
-
+![](media/images/2.png)
 
 
 
